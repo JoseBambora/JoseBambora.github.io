@@ -20,3 +20,18 @@ function scrollFunction() {
     var navbar = document.getElementById("top");
     fix(navbar,height)
 }
+
+function section(sec)
+{
+    var sec = document.getElementById(sec);
+    window.scrollTo({
+        top: sec.offsetTop - height,
+        behavior: 'smooth'
+    });
+    sec.classList.add('highlight');
+
+    setTimeout(function() {
+        sec.classList.remove('highlight');
+    }, 1000);
+
+}
