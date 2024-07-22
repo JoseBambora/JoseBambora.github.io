@@ -1,0 +1,79 @@
+.nav-bar-option {
+    --color: white;
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: medium;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: var(--color);
+    border-color: transparent;
+    z-index: 1;
+    width: 20%;
+}
+
+@media (max-width: 575px) {
+    .nav-bar-option {
+        font-size: xx-small;
+    }
+}
+
+.nav-bar-option::before,
+.nav-bar-option::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 70%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+}
+
+
+.nav-bar-option::before {
+    top: -1em;
+    left: -1em;
+}
+
+.nav-bar-option::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+}
+
+
+.nav-bar-option:hover::before,
+.nav-bar-option:hover::after {
+    height: 410px;
+    width: 410px;
+}
+
+.nav-bar-option:hover {
+    color: black;
+}
+
+.nav-bar-option:active {
+    filter: brightness(.8);
+}
+
+.nav-bar-option-selected,
+.nav-bar-option-selected:hover {
+    background-color: darkorange;
+}
+
+.nav-bar-option-fst {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+
+.nav-bar-option-lst {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

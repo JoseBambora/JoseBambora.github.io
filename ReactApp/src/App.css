@@ -1,0 +1,19 @@
+.App {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.ImageContainer {
+  margin: 20px;
+  width: 20%;
+}
+
+.Image {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  border-color: white;
+  border-width: 2px;
+  border-style: solid;
+}

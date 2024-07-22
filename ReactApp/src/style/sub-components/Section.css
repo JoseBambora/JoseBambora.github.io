@@ -1,0 +1,101 @@
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.section-name {
+    color: red;
+    font-size: large;
+    width: 70%;
+}
+
+.section-period {
+    width: 30%;
+    color: dodgerblue;
+    font-size: large;
+    text-align: end;
+}
+
+
+.section {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: lightgray;
+    background-color: white;
+    box-shadow: 2px 2px 2px lightgray;
+}
+
+.card-title {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #262626;
+    font-size: 1.5em;
+    line-height: normal;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+.small-desc {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5em;
+    color:#262626;
+}
+
+.card {
+    width: 100%;
+    display: block;
+    position: relative;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 2em 1.2em;
+    padding: 10px;
+    margin: 20px;
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
+          lightgrey 5px 10px 15px;
+}
+
+.card:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: linear-gradient(135deg, yellow, red);
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.35s ease-out;
+}
+
+.card:hover:before {
+    transform: scale(28);
+}
+
+.card:hover .small-desc {
+    transition: all 0.5s ease-out;
+}
+
+.card:hover .card-title {
+    transition: all 0.5s ease-out;
+}
+
+.card p {
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}

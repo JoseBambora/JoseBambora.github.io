@@ -1,0 +1,19 @@
+.my-link {
+    color:deepskyblue;
+    text-decoration: none;
+}
+
+.my-link:hover {
+    color:orange;
+    text-decoration: none;
+}
+
+.my-link-no-color {
+    color:white;
+    text-decoration: none;
+}
+
+.my-link-no-color:hover {
+    color:white;
+    text-decoration: none;
+}

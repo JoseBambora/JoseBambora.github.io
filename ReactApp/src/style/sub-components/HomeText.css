@@ -1,0 +1,11 @@
+.home-text {
+    background-color: lightgray;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+    padding: 15px;
+}
