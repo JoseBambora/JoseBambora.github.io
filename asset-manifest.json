@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/JoseBambora/JoseBambora.github.io/static/css/main.bf9b82fd.css",
+    "main.js": "/JoseBambora/JoseBambora.github.io/static/js/main.3417ac7d.js",
+    "static/js/453.1b4ccf3e.chunk.js": "/JoseBambora/JoseBambora.github.io/static/js/453.1b4ccf3e.chunk.js",
+    "static/media/Zé.jpg": "/JoseBambora/JoseBambora.github.io/static/media/Zé.7a62b9ce04362fa31bb6.jpg",
+    "index.html": "/JoseBambora/JoseBambora.github.io/index.html",
+    "main.bf9b82fd.css.map": "/JoseBambora/JoseBambora.github.io/static/css/main.bf9b82fd.css.map",
+    "main.3417ac7d.js.map": "/JoseBambora/JoseBambora.github.io/static/js/main.3417ac7d.js.map",
+    "453.1b4ccf3e.chunk.js.map": "/JoseBambora/JoseBambora.github.io/static/js/453.1b4ccf3e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bf9b82fd.css",
+    "static/js/main.3417ac7d.js"
+  ]
+}
