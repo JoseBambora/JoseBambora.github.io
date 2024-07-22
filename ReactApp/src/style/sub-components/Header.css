@@ -15,13 +15,6 @@
     }
 }
 
-.header-content {
-    display: flex;
-    padding: 20px;
-    color: white;
-    direction: flex;
-}
-
 .top-fix {
     position: -webkit-sticky;
     position: sticky;
@@ -53,6 +46,7 @@
 }
 
 .header-main {
+    margin-top: 5px;
     width: 30%;
 }
 
@@ -77,4 +71,17 @@
 
 .header-list li {
     margin-top: 20px;
+}
+
+.header-main-top {
+    margin-top: 0px;
+}
+
+.header-main-bottom {
+    margin-bottom: 0px;
+}
+
+.header-main-bottom p {
+    display: inline-block;
+    vertical-align: top;
 }
