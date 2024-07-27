@@ -9,7 +9,7 @@ const ElementCareer = ({ companyName, companyLink, techs, work }) => (
     <TableInfo 
         content={[
             {name: 'Company', value: <MyLink link={companyLink} text={companyName} />},
-            {name: 'Techonologies', value: <p>{techs}</p>},
+            {name: 'Technologies', value: <p>{techs}</p>},
             {name: 'Description', value: <p>{work}</p>}
         ]}
     />

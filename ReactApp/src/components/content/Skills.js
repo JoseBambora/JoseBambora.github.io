@@ -56,16 +56,14 @@ export const Skills = () => {
     return (
         <Page>
             <Section title={'Programming Languages'}>
-                    <TableSkills skillName={'Language'} skills={programming_languages} />
-                </Section>
-                <Section title={'Frameworks'}>
-                    <TableSkills skillName={'Framework'} skills={frameworks} />
-                </Section>
-
+                <TableSkills skillName={'Language'} skills={programming_languages} />
+            </Section>
+            <Section title={'Frameworks'}>
+                <TableSkills skillName={'Framework'} skills={frameworks} />
+            </Section>
             <Section title={'DataBases'}>
                 <TableSkills skillName={'DataBase'} skills={databases} />
             </Section>
-
             <Section title={'Extras'}>
                 <TableSkills skillName={'Extra'} skills={extra} />
             </Section>

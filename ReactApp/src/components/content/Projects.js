@@ -10,7 +10,7 @@ const ElementProject = ({ link, projectName, techs, work, type }) => (
         content={[
             {name:'Project Link', value:<MyLink link={link} text={projectName} />},
             {name:'Type', value:<p>{type}</p>},
-            {name:'Techonologies', value:<p>{techs}</p>},
+            {name:'Technologies', value:<p>{techs}</p>},
             {name:'Description', value:<p>{work}</p>}
         ]}
     />
@@ -19,13 +19,13 @@ const ElementProject = ({ link, projectName, techs, work, type }) => (
 
 const descriptionDiscordBot = <p>
     This project was created for a Discord community/server.
-    I am a <MyLink link={'https://scbraga.pt/'} text={'SC Braga'}/> fan and wanted to join a fan community of this club to stay updated on club news and discuss with other fans.
+    I am a <MyLink link={'https://scbraga.pt/'} text={'SC Braga'}/> fan and wanted to join a fan community of this club to stay updated on club news and discuss with other fans about some topics.
     In this Discord server, there is a channel dedicated to predicting the outcomes of specific games. My bot collects these predictions, determines the final result, announces the correct predictions, and creates a leaderboard.
 </p>
 
 const descriptionLLM = <p>
     In this project, along with two colleagues, we compared the performance of three different LLM models for Sentiment Analysis (DistilBert, Mistral, Gemma). 
-    The main goal was to create a dataset for Sentiment Analysis, train various LLM models, and compare them across multiple factors such as final accuracy, training time, and model size.
+    The main goal was to use a public dataset for Sentiment Analysis, train various LLM models, and compare them across multiple factors such as final accuracy, training time, and model size.
     I was responsible for tuning Mistral. If you want to use my model, it is available on my <MyLink link={'https://huggingface.co/JoseBambora/mistral_retrained'} text={'HuggingFace profile'}/>.
 </p>
 
@@ -40,15 +40,15 @@ const descriptionMultiAgentSystem = <p>
 </p>
 
 const descriptionMobileApp = <p>
-    In this project, my two colleagues and I created an app featuring trails around the city of Braga. 
+    In this project, my group created an app featuring trails around the city of Braga. 
     We developed the app twice: once using Android Native and once using React Native.
     The project aimed to gain experience in mobile development and to compare native development with cross-platform development.
 </p>
 
 const descriptionWebsite = <p>
-    This website was developed with two colleagues. 
+    This website was developed with two colleagues.
     The aim was to create a platform showcasing historical roads in Braga and their associated history.
-    Our group built everything from scratch, including the database, the backend server, and the frontend server.
+    Our group built everything from scratch, including the database (MongoDB), the backend server (NodeJS), and the frontend server (NodeJS).
 </p>
 
 
