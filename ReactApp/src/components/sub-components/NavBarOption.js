@@ -11,7 +11,7 @@ export const NavBarOption = ({ link, text, icon, isSelected, pressed, index }) =
     };
     return (
         <button className={className} onClick={handleClick}>
-            <p>{icon} {text}</p>
+            <p>{icon} <b>{text}</b></p>
         </button>
     )
 }

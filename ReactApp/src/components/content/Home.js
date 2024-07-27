@@ -32,7 +32,7 @@ export const Home = () => {
                         Since 2018, I have been donating blood three times a year.
                     </p>
                     <p>
-                        The rest of my hobbies are just basically, hang out with my friends, watch some movies, play some video games and also developing personal projects.
+                        The rest of my hobbies are just basically, hang out with my friends, watch some movies, play some video games and also developing personal projects, like this website.
                     </p>
                 </HomeText>
             </Section>
@@ -41,10 +41,9 @@ export const Home = () => {
                     <p>
                         Like 90% of Portuguese people, I support a football club ⚽ and, obviously, football is like a religion 😅.
                         The club that I support is <MyLink link={'https://scbraga.pt/'} text={'SC Braga'} />, and I have been associated with the club since I was born.
-                        The sports I follow to support my club are football and indoor football.
                     </p>
                     <p>
-                        The people that more inspire me are my parents, for all the hard work and dedication that they gave me, Cristiano Ronaldo for his determination and hard work to be always the best and for the gym, I took insipiration from Jay Cutler and Kevin Levrone.
+                        The people that more inspire me are my parents, for all the hard work and dedication that they gave me. In addition, Cristiano Ronaldo for his determination and hard work to be always the best and for the gym, I took insipiration from Jay Cutler and Kevin Levrone.
                     </p>
                 </HomeText>
             </Section>

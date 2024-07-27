@@ -1,6 +1,7 @@
 .my-link {
     color:deepskyblue;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .my-link:hover {

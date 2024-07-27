@@ -5,10 +5,8 @@
     overflow: hidden;
     cursor: pointer;
     transition: .5s;
-    font-weight: 400;
     font-size: medium;
     border: 1px solid;
-    font-family: inherit;
     text-transform: uppercase;
     color: var(--color);
     border-color: transparent;

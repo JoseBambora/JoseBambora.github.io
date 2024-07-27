@@ -27,7 +27,7 @@ export const Header = ({ selected, setSelected }) => (
                     <ul className="header-list">
                         <li><MyLink link={'https://www.linkedin.com/in/jose-m-carvalho'} text={<p><FaLinkedin color="white" /> Linkedin</p>} /></li>
                         <li><MyLink link={'https://github.com/JoseBambora'} text={<p><FaGithub color="white" /> GitHub</p>} /></li>
-                        <li><MyLink link={'https://www.linkedin.com/in/jose-m-carvalho'} text={<p><FaInstagram color="white" /> Instagram</p>} /></li>
+                        <li><MyLink link={'https://www.instagram.com/josebambora20/'} text={<p><FaInstagram color="white" /> Instagram</p>} /></li>
                     </ul>
                 </section>
                 <section className="header-info-half-2">

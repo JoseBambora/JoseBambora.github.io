@@ -15,6 +15,7 @@ body {
             #1a1a1a);
     background-size: 40px 40px;
     animation: move 4s linear infinite;
+    font-family: Arial, sans-serif;
 }
 
 @keyframes move {
