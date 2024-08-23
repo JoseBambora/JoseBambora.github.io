@@ -15,7 +15,7 @@ export const Skills = () => {
     const extra = [
         { name: 'Machine Learning', level: 4 },
         { name: 'UML', level: 4 },
-        { name: 'Web Delepment', level: 4 },
+        { name: 'Web Development', level: 4 },
         { name: 'Docker', level: 4 },
         { name: 'Cloud', level: 3 },
     ]
