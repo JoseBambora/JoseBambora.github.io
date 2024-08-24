@@ -3,12 +3,13 @@ import { MyLink } from '../ui/Link'
 import { Page } from '../sub-components/Page'
 import { Section } from '../sub-components/Section'
 import { TableInfo } from '../ui/TableInfo'
+import { FaGithub } from 'react-icons/fa'
 
 
 const ElementProject = ({ link, projectName, techs, work, type }) => (
     <TableInfo 
         content={[
-            {name:'Project Link', value:<MyLink link={link} text={projectName} />},
+            {name:'Project Link', value:<p><FaGithub color="black" /> <MyLink link={link} text={projectName} /></p>},
             {name:'Type', value:<p>{type}</p>},
             {name:'Technologies', value:<p>{techs}</p>},
             {name:'Description', value:<p>{work}</p>}
