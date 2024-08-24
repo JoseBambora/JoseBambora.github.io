@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react'
+import React from 'react'
 import {
     BrowserRouter as Router,
     Routes,
@@ -14,11 +14,10 @@ import { Education } from './components/content/Education';
 import '../src/style/sub-components/Body.css'
 
 function App() {
-    const [selected, setSelected] = useState(1)
     return (
         <Router>
             <div className="container-page">
-                <Header selected={selected} setSelected={setSelected} />
+                <Header />
                 <Routes>
                     <Route
                         path="/"

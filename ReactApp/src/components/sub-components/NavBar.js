@@ -3,8 +3,34 @@ import { NavBarOption } from './NavBarOption'
 import { FaListUl, FaUser, FaBriefcase, FaGraduationCap } from "react-icons/fa";
 import { FaComputer } from "react-icons/fa6";
 import '../../style/sub-components/Navbar.css'
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
-export const NavBar = ({ selected, setSelected }) => {
+export const NavBar = () => {
+    const location = useLocation();
+    const [selected, setSelected] = useState(-2)
+    useEffect(() => {
+        switch (location.pathname) {
+            case '/':
+                setSelected(1);
+                break;
+            case '/skills':
+                setSelected(2);
+                break;
+            case '/education':
+                setSelected(3);
+                break;
+            case '/career':
+                setSelected(4);
+                break;
+            case '/projects':
+                setSelected(5);
+                break;
+            default:
+                setSelected(1);
+        }
+    }, [location.pathname, setSelected]);
+
     return (
         <nav className='nav-bar'>
             <NavBarOption index={0} link={'/'} text={'About Me'} icon={<FaUser />} isSelected={selected === 1} pressed={() => setSelected(1)} />

@@ -5,9 +5,15 @@ import '../../style/sub-components/Header.css'
 import { FaLinkedin, FaGithub, FaPhone, FaEnvelope, FaMapMarkerAlt, FaInstagram, FaFilePdf } from "react-icons/fa";
 import image from '../../Zé.jpg'
 import { MyLink } from "../ui/Link";
+import { useState } from "react";
 
-export const Header = ({ selected, setSelected }) => (
-    <header className="top-fix">
+export const Header = () => {
+    const [hidden, setHidden] = useState(true);
+    const showHideCvs = () => {
+        setHidden(!hidden)
+    }
+
+    return <header className="top-fix">
         <div className='header'>
             <div className='ImageContainer'>
                 <img className='Image' src={image} alt='My face' />
@@ -17,9 +23,6 @@ export const Header = ({ selected, setSelected }) => (
                     <h1>José Carvalho</h1>
                     <h3>Software Engineer</h3>
                     <h4><FaMapMarkerAlt /> Braga, Portugal</h4>
-                </section>
-                <section className="header-main-bottom">
-                    <h5><MyLink link={'cvs/CV_EN.pdf'} download={'JoséCarvalho_EN.pdf'} text={<p><FaFilePdf color="white" /> CV (English)</p>} /> <MyLink link={'cvs/CV_PT.pdf'} download={'JoséCarvalho_PT.pdf'} text={<p><FaFilePdf color="white" /> CV (Portuguese)</p>} /></h5>
                 </section>
             </div>
             <div className="header-info">
@@ -32,12 +35,19 @@ export const Header = ({ selected, setSelected }) => (
                 </section>
                 <section className="header-info-half-2">
                     <ul className="header-list">
+                        <li>
+                            <button className="cvs-button" onClick={showHideCvs}><FaFilePdf color="white" /> Show</button>
+                            <div className={hidden ? 'cvs cvs-hidden' : 'cvs cvs-show'}>
+                                <MyLink link={'/cvs/JoséCarvalho_EN.pdf'} text={<p><FaFilePdf color="white" /> English </p>} />
+                                <MyLink link={'/cvs/JoséCarvalho_PT.pdf'} text={<p><FaFilePdf color="white" /> Portuguese</p>} />
+                            </div>
+                        </li>
                         <li><FaPhone /> +351 969 598 852</li>
                         <li><FaEnvelope /> josecarvalho.ei@gmail.com </li>
                     </ul>
                 </section>
             </div>
         </div>
-        <NavBar selected={selected} setSelected={setSelected} />
+        <NavBar />
     </header>
-)
+}

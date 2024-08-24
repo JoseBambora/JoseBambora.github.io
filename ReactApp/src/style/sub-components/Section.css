@@ -1,7 +1,6 @@
 .section-header {
     display: flex;
     align-items: center;
-    justify-content: center;
     width: 100%;
 }
 
@@ -46,7 +45,7 @@
     font-size: 1em;
     font-weight: 400;
     line-height: 1.5em;
-    color:#262626;
+    color: #262626;
 }
 
 .card {
@@ -62,7 +61,7 @@
     z-index: 0;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
-          lightgrey 5px 10px 15px;
+        lightgrey 5px 10px 15px;
 }
 
 .card:before {
@@ -96,4 +95,18 @@
     white-space: normal;
     word-wrap: break-word;
     overflow-wrap: break-word;
+}
+
+.section-img {
+    border-radius: 10px;
+    width: 13%;
+    display: block;
+    margin-right: 15px;
+}
+
+
+@media (max-width: 575px) {
+    .section-img {
+        width: 20%;
+    }
 }

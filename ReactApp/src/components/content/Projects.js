@@ -55,22 +55,22 @@ const descriptionWebsite = <p>
 export const Projects = () => {
     return (
         <Page>
-            <Section title={'Discord Bot'}>
+            <Section title={'Discord Bot'} img={'bot.jpg'} imgAlt={'Bot'}>
                 <ElementProject link={'https://github.com/JoseBambora/PersonalProjects/tree/main/BotDiscord'} projectName={'BotDiscord'} techs={'Python, Java, Maven, SQLite'} work={descriptionDiscordBot} type={'Personal'}/>
             </Section>
-            <Section title={'Sentimental Analysis with Large Language Models'}>
+            <Section title={'Sentimental Analysis with Large Language Models'} img={'llm.png'} imgAlt={'LLM'}>
                 <ElementProject link={'https://github.com/AbhimanyuAryan/llm-finetuning'} projectName={'LLM Fine Tuning'} techs={'Python, Sckitlearn, HuggingFace'} work={descriptionLLM} type={'University'}/>
             </Section>
-            <Section title={'Sensorization Mobile Application'}>
+            <Section title={'Sensorization Mobile Application'} img={'sensors.png'} imgAlt={'Sensors'}>
                 <ElementProject link={'https://github.com/JoseBambora/SAProject'} projectName={'Sensors'} techs={'Android, Kotlin, SQLite'} work={descriptionSensorization} type={'University'}/>
             </Section>
-            <Section title={'Multi Agents System'}>
+            <Section title={'Multi Agents System'} img={'agents.png'} imgAlt={'Agents'}>
                 <ElementProject link={'https://github.com/AbhimanyuAryan/multiagents-transport'} projectName={'Multi Agent Systems'} techs={'Python'} work={descriptionMultiAgentSystem} type={'University'}/>
             </Section>
-            <Section title={'Mobile App'}>
+            <Section title={'Mobile App'} img={'BraGuia.png'} imgAlt={'Braguia'}>
                 <ElementProject link={'https://github.com/JoseBambora/Projeto-TDS'} projectName={'Android Native + React Native'} techs={'Java, Android, React Native, JavaScript, SQLite, Realm'} work={descriptionMobileApp} type={'University'}/>
             </Section>
-            <Section title={'Website'}>
+            <Section title={'Website'} img={'nodejs.png'} imgAlt={'Nodejs'}>
                 <ElementProject link={'https://github.com/JoseBambora/ProjetoEW'} projectName={'NodeJS Website'} techs={'JavaScript, Express, Pug, NodeJS, MongoDB'} work={descriptionWebsite} type={'University'}/>
             </Section>
         </Page>

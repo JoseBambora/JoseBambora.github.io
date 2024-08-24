@@ -29,10 +29,10 @@ const work_ces = <p>
 export const Career = () => {
     return (
         <Page>
-            <Section title={'Summer lab - IT Sector'} from={'7/2023'} to={'7/2023'}>
+            <Section title={'Summer lab - IT Sector'} from={'7/2023'} to={'7/2023'} img={'/itsector.png'} imgAlt={'ITSector'}>
                 <ElementCareer companyLink={'https://www.itsector.pt/'} companyName={'IT Sector'} techs={'Java, JSP, Spring Boot.'} work={work_its} />
             </Section>
-            <Section title={'Summer Camp - Cesium'} from={'7/2022'} to={'7/2022'}>
+            <Section title={'Summer Camp - Cesium'} from={'7/2022'} to={'7/2022'} img={'/cesium.png'} imgAlt={'Cesium'}>
                 <ElementCareer companyLink={'https://www.cesium.di.uminho.pt/'} companyName={'Cesium'} techs={'Elixir, Phoenix.'} work={work_ces} />
             </Section>
         </Page>
