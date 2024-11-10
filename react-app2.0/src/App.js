@@ -17,11 +17,9 @@ function Page({ page }) {
 function App() {
   const [page, setPage] = useState(0)
   return (
-    <div className="flex bg-zinc-100 text-zinc-700 dark:text-white dark:bg-zinc-700">
-      <div className="w-1/4 h-screen">
-        <SideBar setPage={setPage} />
-      </div>
-      <div className='w-3/4'>
+    <div className="md:flex bg-zinc-100 text-zinc-700 dark:text-white dark:bg-zinc-700">
+      <SideBar setPage={setPage} page={page} />
+      <div className='md:w-4/5 h-screen'>
         <Page page={page} />
       </div>
     </div>
