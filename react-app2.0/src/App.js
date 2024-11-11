@@ -2,6 +2,10 @@ import { useState } from 'react';
 import './App.css';
 import SideBar from './components/Sidebar';
 import AboutMe from './pages/AboutMe';
+import Career from './pages/Career';
+import Education from './pages/Education';
+import Skills from './pages/Skills';
+import Projects from './pages/Projects';
 
 /*
 
@@ -27,9 +31,13 @@ function Page({ page }) {
     case 0:
       return <AboutMe />
     case 1:
-      return <p>1</p>
+      return <Career />
+    case 2:
+      return <Education />
+    case 3:
+      return <Skills />
     default:
-      return <p>2</p>
+      return <Projects />
   }
 
 }
@@ -39,7 +47,7 @@ function App() {
   return (
     <div className="md:flex bg-zinc-100 text-zinc-700 dark:text-white dark:bg-zinc-700">
       <SideBar setPage={setPage} page={page} />
-      <main className='md:w-4/5'>
+      <main className='md:w-4/5 min-h-screen'>
         <Page page={page} />
       </main>
     </div>

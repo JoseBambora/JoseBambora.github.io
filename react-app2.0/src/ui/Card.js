@@ -1,9 +1,45 @@
 import Container from "./Container";
+import Link from '../ui/Link';
+import { FaGithub } from 'react-icons/fa6';
 
-function Card({ children, title, label, extra }) {
+export function Topic({ title, content }) {
+  return (
+    <section className='w-full'>
+      <span className='font-semibold text-lg'>{title}</span>
+      <ul className='mt-3 space-y-2 w-full ml-7 z-0'>
+        {content.map((t, index) => (
+          <li key={index}>
+            {t}
+          </li>))}
+      </ul>
+    </section>
+  )
+}
+
+export function Sections({ topics, projects }) {
+  return (
+    <div className='grid grid-cols-2 w-11/12'>
+      <Topic title={"Topics"} content={topics} />
+      <Topic title={"Projects"} content={projects} />
+    </div>
+  )
+}
+
+export function LinkProject({ href, text }) {
+  return (
+    <Link href={href}>
+      <div className='flex space-x-2'>
+        <div className="text-2xl flex justify-center text-zinc-700 dark:text-white"><FaGithub /> </div>
+        <p>{text}</p>
+      </div>
+    </Link>
+  )
+}
+
+export function Card({ children, title, label, extra }) {
   return (
     <div className="w-full bg-zinc-300 dark:bg-zinc-800 rounded-lg shadow-lg shadow-zinc-400/50 dark:shadow-zinc-900 mb-4 transition ease-in-out hover:scale-101 duration-300">
-      <Container col={true} center={false}>
+      <Container col={true} center={false} padding={true}>
         <section className="w-full flex mb-3">
           <section className="flex flex-col">
             <h1 className="text-3xl font-bold">{title}</h1>
@@ -20,5 +56,3 @@ function Card({ children, title, label, extra }) {
     </div>
   )
 }
-
-export default Card;

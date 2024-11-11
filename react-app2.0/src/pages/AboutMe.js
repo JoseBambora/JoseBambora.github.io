@@ -1,6 +1,7 @@
 
 import Container from '../ui/Container';
-import Card from '../ui/Card';
+import { Card } from '../ui/Card';
+import Link from '../ui/Link';
 
 function AboutMe() {
   return (
@@ -16,7 +17,7 @@ function AboutMe() {
         <p>
           I entered the software engineering world in 2019, with C# as my first programming language.
           My favorite programming languages are Java, Python, and Kotlin, but I also enjoy C#, JavaScript, and C.
-          Currently, I am still pursuing my degree in software engineering, and I am in the final year of my master's program at the <a href={'https://www.uminho.pt/PT'}>University of Minho</a> in Braga, Portugal.
+          Currently, I am still pursuing my degree in software engineering, and I am in the final year of my master's program at the <Link href={'https://www.uminho.pt/PT'}>University of Minho</Link> in Braga, Portugal.
         </p>
         <p>
           Regarding activities outside of computers, such as sports or physical activity, I have been going to the gym since 2023.
@@ -30,7 +31,7 @@ function AboutMe() {
       <Card title={'Curiosities'}>
         <p>
           Like 90% of Portuguese people, I support a football club ⚽ and, obviously, football is like a religion 😅.
-          The club that I support is <a href={'https://scbraga.pt/'}>SC Braga</a>, and I have been associated with the club since I was born.
+          The club that I support is <Link href={'https://scbraga.pt/'}>SC Braga</Link>, and I have been associated with the club since I was born.
         </p>
         <p>
           The people that more inspire me are my parents, for all the hard work and dedication that they gave me. In addition, Cristiano Ronaldo for his determination and hard work to be always the best and for the gym, I took insipiration from Jay Cutler and Kevin Levrone.
