@@ -12,11 +12,20 @@ import { FaXmark } from "react-icons/fa6";
 import Button from "../ui/Button";
 import Container from "../ui/Container";
 
+
+function SideBarIconText({ icon, text }) {
+  return (
+    <>
+      <div className="w-2/5 text-2xl flex justify-center z-10">{icon}</div>
+      <div className="w-3/5 z-10 text-left">{text}</div>
+    </>
+  )
+}
+
 function SideBarElement({ text, icon, onClick, selected }) {
   return (
     <button className={"relative text-lg flex p-4 rounded-lg overflow-hidden group " + (selected ? "bg-orange-500 shadow-md shadow-zinc-400/50 dark:shadow-zinc-900 text-white" : "")} onClick={onClick}>
-      <div className="w-2/5 text-2xl flex justify-center z-10">{icon}</div>
-      <div className="w-3/5 z-10 text-left">{text}</div>
+      <SideBarIconText icon={icon} text={text} />
       <span className="absolute inset-0 bg-red-500 dark:bg-red-600 transform -translate-x-full group-hover:translate-x-0 duration-500 opacity-0 group-hover:opacity-100 group-hover:text-white"></span>
     </button>
   )
@@ -30,22 +39,14 @@ function SideBarLightDark() {
   };
   return (
     <Container col={false} center={true}>
-      <div className="border border-white rounded-full w-1/2 p-1 flex">
-        <div className={`transform duration-300 ease-in-out ${darkMode ? 'translate-x-full' : 'translate-x-0'}`}>
-          <Button onClick={toggleDarkMode} fullrounded={true}>
-            {darkMode ? (
-              <FaMoon />
-            ) : (
-              <FaSun />
-            )}
-          </Button>
-        </div>
-      </div>
+      <Button onClick={toggleDarkMode} fullrounded={true}>
+        {darkMode ? (<FaMoon />) : (<FaSun />)}
+      </Button>
     </Container>
   )
 }
 
-function SideBarContact() {
+function SideBarSocial() {
   return (
     <div className="flex justify-around w-full rounded-lg">
       <Container col={false} center={false}>
@@ -67,15 +68,16 @@ function SideBarTop({ children }) {
 
 function SideBarBottom({ children }) {
   return (
-    <div className="mt-auto flex flex-col">
+    <div className="mt-auto flex flex-col justify-center">
       {children}
     </div>
   )
 }
 
+
 function SideBarElements({ setPage, setHidden, page }) {
   return (
-    <div className="fixed w-full md:w-1/5 h-screen md:bg-opacity-0 dark:md:bg-opacity-0 bg-zinc-500 dark:bg-zinc-500 bg-opacity-50 dark:bg-opacity-50">
+    <div className="fixed w-full md:w-1/5 h-screen md:bg-opacity-0 dark:md:bg-opacity-0 bg-zinc-500 dark:bg-zinc-500 bg-opacity-50 dark:bg-opacity-50 z-20">
       <Container col={false} center={false}>
         <div className="absolute top-6 right-0 md:hidden z-50">
           <Button onClick={setHidden} fullrounded={true}><FaXmark /></Button>
@@ -91,7 +93,10 @@ function SideBarElements({ setPage, setHidden, page }) {
             </SideBarTop>
             <SideBarBottom>
               <SideBarLightDark />
-              <SideBarContact />
+              <Container col={false} center={true}>
+                <span className="text-lg">&copy; José Carvalho</span>
+              </Container>
+              <SideBarSocial />
             </SideBarBottom>
           </Container>
         </div>
@@ -102,7 +107,7 @@ function SideBarElements({ setPage, setHidden, page }) {
 
 function BurgerButton({ changeHidden }) {
   return (
-    <div className="fixed top-1 left-1">
+    <div className="fixed top-4 left-4 z-10">
       <Button onClick={changeHidden} fullrounded={true}><FaBars /></Button>
     </div>
   )

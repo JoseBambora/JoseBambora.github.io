@@ -38,7 +38,7 @@ export function LinkProject({ href, text }) {
 
 export function Card({ children, title, label, extra }) {
   return (
-    <div className="w-full bg-zinc-300 dark:bg-zinc-800 rounded-lg shadow-lg shadow-zinc-400/50 dark:shadow-zinc-900 mb-4 transition ease-in-out hover:scale-101 duration-300">
+    <div className="w-full bg-zinc-300 dark:bg-zinc-800 rounded-lg shadow-lg shadow-zinc-400/50 dark:shadow-zinc-900 mb-4 transition ease-in-out hover:scale-101 duration-300 z-0">
       <Container col={true} center={false} padding={true}>
         <section className="w-full flex mb-3">
           <section className="flex flex-col">
