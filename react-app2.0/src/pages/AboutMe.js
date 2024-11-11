@@ -1,6 +1,6 @@
 
 import Container from '../ui/Container';
-import { Card } from '../ui/Card';
+import { Card, CardSideBySide } from '../ui/Card';
 import Link from '../ui/Link';
 import { FaEnvelope, FaPhone } from "react-icons/fa6";
 import { FaFilePdf } from "react-icons/fa6";
@@ -9,7 +9,7 @@ import { FaLocationDot } from "react-icons/fa6";
 function AboutMeIconText({ icon, text }) {
   return (
     <div className="flex w-full text-lg space-x-3">
-      <div className='text-xl'>{icon}</div>
+      <div className='text-xl text-white'>{icon}</div>
       <p>{text}</p>
     </div>
   )
@@ -26,8 +26,12 @@ function AboutMeImportantInfo() {
           <AboutMeIconText icon={<FaPhone />} text={"+351 969598852"} />
         </li>
         <li className='flex'>
-          <AboutMeIconText icon={<FaFilePdf />} text={"CV PT"} />
-          <AboutMeIconText icon={<FaFilePdf />} text={"CV EN"} />
+          <Link href={"cvs/JoséCarvalho_PT.pdf"}>
+            <AboutMeIconText icon={<FaFilePdf />} text={"CV PT"} />
+          </Link>
+          <Link href={"cvs/JoséCarvalho_EN.pdf"}>
+            <AboutMeIconText icon={<FaFilePdf />} text={"CV EN"} />
+          </Link>
         </li>
       </ul>
     </Container>
@@ -38,10 +42,8 @@ function AboutMePicture() {
   return (
     <Container col={false} center={false}>
       <img src="Zé.jpg" alt="My face" className='aspect-square w-1/4 mr-3 rounded-lg' />
-      <div className='flex flex-col'>
-        <div className='mb-3'>
-          <h1 className='text-3xl font-bold'>José Carvalho</h1>
-        </div>
+      <div className='flex flex-col space-y-3'>
+        <h1 className='text-3xl font-bold'>José Carvalho</h1>
         <AboutMeIconText icon={<FaLocationDot />} text={"Braga, Portugal"} />
       </div>
     </Container>
@@ -51,14 +53,14 @@ function AboutMePicture() {
 function AboutMe() {
   return (
     <Container col={true} center={false}>
-      <div className='flex flex-col md:flex-row md:space-x-3'>
+      <CardSideBySide>
         <Card>
           <AboutMePicture />
         </Card>
-        <Card>
+        <Card title={'Contacts'}>
           <AboutMeImportantInfo />
         </Card>
-      </div>
+      </CardSideBySide>
       <Card title={'Introduction'}>
         <p>Hello! My name is José Carvalho, I am 22 years old and I live in Braga, Portugal 🇵🇹.</p>
       </Card>

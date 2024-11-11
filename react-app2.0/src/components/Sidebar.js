@@ -24,9 +24,9 @@ function SideBarIconText({ icon, text }) {
 
 function SideBarElement({ text, icon, onClick, selected }) {
   return (
-    <button className={"relative text-lg flex p-4 rounded-lg overflow-hidden group " + (selected ? "bg-orange-500 shadow-md shadow-zinc-400/50 dark:shadow-zinc-900 text-white" : "")} onClick={onClick}>
+    <button className={"relative text-lg flex p-4 rounded-lg overflow-hidden group " + (selected ? "bg-red-500 shadow-md shadow-zinc-400/50 dark:shadow-zinc-900 text-white" : "")} onClick={onClick}>
       <SideBarIconText icon={icon} text={text} />
-      <span className="absolute inset-0 bg-red-500 dark:bg-red-600 transform -translate-x-full group-hover:translate-x-0 duration-500 opacity-0 group-hover:opacity-100 group-hover:text-white"></span>
+      <span className="absolute inset-0 bg-orange-500 dark:bg-orange-500 transform -translate-x-full group-hover:translate-x-0 duration-500 opacity-0 group-hover:opacity-100 group-hover:text-white"></span>
     </button>
   )
 }
