@@ -1,5 +1,5 @@
 import Container from '../ui/Container';
-import { Card, CardSideBySide } from '../ui/Card';
+import { Card, CardSideBySide, Section, Sections } from '../ui/Card';
 import { Table } from '../ui/Table';
 
 
@@ -28,7 +28,7 @@ function Skills() {
     { name: '.NET C#', level: 3 },
     { name: 'Dart', level: 2 },
   ]
-  const frameworks = [
+  const frameworks1 = [
     { name: 'React Native', level: 4 },
     { name: 'React JS', level: 4 },
     { name: 'Android', level: 4 },
@@ -37,6 +37,8 @@ function Skills() {
     { name: 'Pandas', level: 4 },
     { name: 'Numpy', level: 4 },
     { name: 'MatPlotLib', level: 4 },
+  ]
+  const frameworks2 = [
     { name: 'TensorFlow', level: 3 },
     { name: 'PyTorch', level: 3 },
     { name: 'Spring Boot', level: 3 },
@@ -44,7 +46,7 @@ function Skills() {
     { name: 'JQuery', level: 3 },
     { name: 'Flutter', level: 2 },
     { name: 'Blazor', level: 2 },
-    { name: 'OpenGL', level: 2 },
+    { name: 'OpenGL', level: 2 }
   ]
   const soft_skills = [
     { name: 'Hard Work', level: 5 },
@@ -72,7 +74,14 @@ function Skills() {
       </CardSideBySide>
       <CardSideBySide>
         <Card title={"Frameworks"}>
-          <Table header={["Frameworks", "Level"]} body={frameworks.map(({ name, level }) => [name, level])} />
+          <Sections>
+            <Section>
+              <Table header={["Frameworks", "Level"]} body={frameworks1.map(({ name, level }) => [name, level])} />
+            </Section>
+            <Section>
+              <Table header={["Frameworks", "Level"]} body={frameworks2.map(({ name, level }) => [name, level])} />
+            </Section>
+          </Sections>
         </Card>
       </CardSideBySide>
     </Container >

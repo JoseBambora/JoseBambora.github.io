@@ -1,40 +1,47 @@
 
 import Container from '../ui/Container';
-import { Card, CardSideBySide } from '../ui/Card';
+import { Card, CardSideBySide, Section, SectionList, SectionListElement } from '../ui/Card';
 import Link from '../ui/Link';
 import { FaEnvelope, FaPhone } from "react-icons/fa6";
 import { FaFilePdf } from "react-icons/fa6";
 import { FaLocationDot } from "react-icons/fa6";
+import CopyToClipBoard from '../ui/CopyToClipBoard';
 
-function AboutMeIconText({ icon, text }) {
+
+function AboutMeIconText({ icon, text, copyToClipboard }) {
+
+
   return (
-    <div className="flex w-full text-lg space-x-3">
-      <div className='text-xl text-white'>{icon}</div>
+    <div className="flex text-lg space-x-3 items-center">
+      <div className='text-xl text-zinc-700 dark:text-white'>{icon}</div>
       <p>{text}</p>
+      {copyToClipboard ?
+        <CopyToClipBoard text={text} />
+        : null}
     </div>
   )
 }
 
 function AboutMeImportantInfo() {
   return (
-    <Container>
-      <ul className="space-y-6">
-        <li>
-          <AboutMeIconText icon={<FaEnvelope />} text={"josecarvalho.ei@gmail.com"} />
-        </li>
-        <li>
-          <AboutMeIconText icon={<FaPhone />} text={"+351 969598852"} />
-        </li>
-        <li className='flex'>
+    <Section>
+      <SectionList>
+        <SectionListElement>
+          <AboutMeIconText icon={<FaEnvelope />} text={"josecarvalho.ei@gmail.com"} copyToClipboard={true} />
+        </SectionListElement>
+        <SectionListElement>
+          <AboutMeIconText icon={<FaPhone />} text={"+351 969598852"} copyToClipboard={true} />
+        </SectionListElement>
+        <SectionListElement>
           <Link href={"cvs/JoséCarvalho_PT.pdf"}>
             <AboutMeIconText icon={<FaFilePdf />} text={"CV PT"} />
           </Link>
           <Link href={"cvs/JoséCarvalho_EN.pdf"}>
             <AboutMeIconText icon={<FaFilePdf />} text={"CV EN"} />
           </Link>
-        </li>
-      </ul>
-    </Container>
+        </SectionListElement>
+      </SectionList>
+    </Section>
   )
 }
 

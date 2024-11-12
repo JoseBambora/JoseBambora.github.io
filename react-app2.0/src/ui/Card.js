@@ -2,33 +2,45 @@ import Container from "./Container";
 import Link from '../ui/Link';
 import { FaGithub } from 'react-icons/fa6';
 
-export function Topic({ title, content }) {
+export function SectionListElement({ children }) {
   return (
-    <section className='w-full'>
-      <span className='font-semibold text-lg'>{title}</span>
-      <ul className='mt-3 space-y-2 w-full ml-7 z-0'>
-        {content.map((t, index) => (
-          <li key={index}>
-            {t}
-          </li>))}
-      </ul>
+    <li className="flex space-x-3">
+      {children}
+    </li>)
+}
+
+export function SectionList({ children }) {
+  return (
+    <ul className='mt-3 space-y-3 w-full ml-7 z-0'>
+      {children}
+    </ul>
+  )
+}
+
+export function SectionTitle({ title }) {
+  return (<span className='font-semibold text-lg'>{title}</span>)
+}
+
+export function Section({ children }) {
+  return (
+    <section className='w-full flex flex-col space-x-3'>
+      {children}
     </section>
   )
 }
 
-export function Sections({ topics, projects }) {
+export function Sections({ children }) {
   return (
-    <div className='grid grid-cols-2 w-11/12'>
-      <Topic title={"Topics"} content={topics} />
-      <Topic title={"Projects"} content={projects} />
-    </div>
+    <section className='w-full flex space-x-3'>
+      {children}
+    </section>
   )
 }
 
 export function LinkProject({ href, text }) {
   return (
     <Link href={href}>
-      <div className='flex space-x-2'>
+      <div className='flex space-x-3'>
         <div className="text-2xl flex justify-center text-zinc-700 dark:text-white"><FaGithub /> </div>
         <p>{text}</p>
       </div>
