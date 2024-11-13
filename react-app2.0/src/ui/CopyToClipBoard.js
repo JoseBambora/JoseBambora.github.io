@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Button from '../ui/Button'
-import { FaRegCopy, FaRegCircleCheck } from "react-icons/fa6";
+import { FaRegCopy, FaCheck } from "react-icons/fa6";
 
 function CopyToClipBoard({ text }) {
   const [copied, setCopied] = useState(false)
@@ -13,9 +13,13 @@ function CopyToClipBoard({ text }) {
     }
   }, [copied]);
   return (
-    <Button onClick={() => { navigator.clipboard.writeText(text); setCopied(true) }} fullrounded={true}>
-      {copied ? <FaRegCircleCheck /> : <FaRegCopy />}
-    </Button>
+    <div className="w-8 h-8 top-0">
+      <Button onClick={() => { navigator.clipboard.writeText(text); setCopied(true) }} fullrounded={true} padding={false}>
+        <div className="text-xs">
+          {copied ? <FaCheck /> : <FaRegCopy />}
+        </div>
+      </Button>
+    </div>
   )
 }
 

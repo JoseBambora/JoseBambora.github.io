@@ -5,7 +5,7 @@ import { LinkProject, Sections, Section, SectionList, SectionListElement, Sectio
 function Education() {
   return (
     <Container col={true} center={false}>
-      <Card title={"Master of Software Engineering"} label={"University of Minho"} extra={"9/2023-Until Now"}>
+      <Card title={"Master of Software Engineering"} label={"University of Minho"} extra={"9/2023 - Until Now"} image={"um.png"}>
         <Sections>
           <Section>
             <SectionTitle title={"Topics"} />
@@ -25,7 +25,7 @@ function Education() {
           </Section>
         </Sections>
       </Card>
-      <Card title={"Bachelor of Software Engineering"} label={"University of Minho"} extra={"9/2020 - 6/2023"}>
+      <Card title={"Bachelor of Software Engineering"} label={"University of Minho"} extra={"9/2020 - 6/2023"} image={"um.png"}>
         <Sections>
           <Section>
             <SectionTitle title={"Topics"} />

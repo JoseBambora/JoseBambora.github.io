@@ -39,7 +39,7 @@ function SideBarLightDark() {
   };
   return (
     <Container col={false} center={true}>
-      <Button onClick={toggleDarkMode} fullrounded={true}>
+      <Button onClick={toggleDarkMode} fullrounded={true} padding={true}>
         {darkMode ? (<FaMoon />) : (<FaSun />)}
       </Button>
     </Container>
@@ -80,7 +80,7 @@ function SideBarElements({ setPage, setHidden, page }) {
     <div className="fixed w-full md:w-1/5 h-screen md:bg-opacity-0 dark:md:bg-opacity-0 bg-zinc-500 dark:bg-zinc-500 bg-opacity-50 dark:bg-opacity-50 z-20">
       <Container col={false} center={false}>
         <div className="absolute top-6 right-0 md:hidden z-50">
-          <Button onClick={setHidden} fullrounded={true}><FaXmark /></Button>
+          <Button onClick={setHidden} fullrounded={true} padding={true}><FaXmark /></Button>
         </div>
         <div className={"w-full h-full items-stretch bg-zinc-300 dark:bg-zinc-800 rounded-lg shadow-lg shadow-zinc-400/50 dark:shadow-zinc-900 z-40"}>
           <Container col={true} center={false}>
@@ -108,7 +108,7 @@ function SideBarElements({ setPage, setHidden, page }) {
 function BurgerButton({ changeHidden }) {
   return (
     <div className="fixed top-4 left-4 z-10">
-      <Button onClick={changeHidden} fullrounded={true}><FaBars /></Button>
+      <Button onClick={changeHidden} fullrounded={true} padding={true}><FaBars /></Button>
     </div>
   )
 }
