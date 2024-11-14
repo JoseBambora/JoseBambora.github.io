@@ -29,9 +29,10 @@ export function Section({ children }) {
   )
 }
 
-export function Sections({ children }) {
+export function Sections({ children, col }) {
+  const typeflex = col ? "md:flex-col md:space-y-3" : "md:flex-row md:space-x-3"
   return (
-    <section className='w-full flex flex-col md:flex-row md:space-x-3'>
+    <section className={`w-full flex flex-col ${typeflex} `}>
       {children}
     </section>
   )
@@ -58,7 +59,7 @@ export function CardSideBySide({ children }) {
 
 export function CardDescription({ children }) {
   return (
-    <div className="flex flex-col space-y-3 rounded-lg mt-3">
+    <div className="flex flex-col space-y-3 rounded-lg">
       <label className="font-semibold">Description</label>
       {children}
     </div>
@@ -78,7 +79,7 @@ function Header({ title, label, extra, image }) {
         </label>
       </section>
       <section className="ml-auto">
-        <h1 className="text-xl font-bold">{extra}</h1>
+        <h1 className="text-lg font-bold">{extra}</h1>
       </section>
     </section>
   ) : null
@@ -89,7 +90,7 @@ export function Card({ children, title, description, label, extra, image }) {
     <div className="w-full bg-zinc-300 dark:bg-zinc-800 rounded-lg shadow-lg shadow-zinc-400/50 dark:shadow-zinc-900 mb-4 transition ease-in-out hover:scale-101 duration-500 z-0">
       <Container col={true} center={false} padding={true}>
         <Header title={title} label={label} extra={extra} image={image} />
-        <section className="space-y-2">
+        <section className="space-y-2 w-full">
           {children}
         </section>
       </Container>

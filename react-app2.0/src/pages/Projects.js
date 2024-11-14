@@ -3,6 +3,17 @@ import { Card } from '../ui/Card';
 
 
 function Projects() {
+  /**
+   * PI
+   * BotDiscord
+   * ImageRecognition
+   * LLM
+   * Agents
+   * NodeJS Site
+   * Personal Site
+   * BraGuia
+   * 
+   */
   return (
     <Container>
       <Card title={"Projects"}>

@@ -9,8 +9,6 @@ import CopyToClipBoard from '../ui/CopyToClipBoard';
 
 
 function AboutMeIconText({ icon, text, copyToClipboard }) {
-
-
   return (
     <div className="flex text-lg space-x-3 items-center">
       <div className='text-xl text-zinc-700 dark:text-white'>{icon}</div>
@@ -34,10 +32,10 @@ function AboutMeImportantInfo() {
         </SectionListElement>
         <SectionListElement>
           <Link href={"cvs/JoséCarvalho_PT.pdf"}>
-            <AboutMeIconText icon={<FaFilePdf />} text={"CV PT"} />
+            <AboutMeIconText icon={<FaFilePdf />} text={"Portuguese CV"} />
           </Link>
           <Link href={"cvs/JoséCarvalho_EN.pdf"}>
-            <AboutMeIconText icon={<FaFilePdf />} text={"CV EN"} />
+            <AboutMeIconText icon={<FaFilePdf />} text={"English CV"} />
           </Link>
         </SectionListElement>
       </SectionList>
