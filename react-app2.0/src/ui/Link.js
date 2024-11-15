@@ -5,4 +5,11 @@ function Link({ href, children }) {
     </a>)
 }
 
+export function LinkNoColor({ href, children }) {
+  return (
+    <a className="underline decoration-1 hover:text-orange-500" href={href} target="blank">
+      {children}
+    </a>)
+}
+
 export default Link;

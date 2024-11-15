@@ -49,7 +49,6 @@ function SideBarLightDark() {
 function SideBarSocial() {
   return (
     <div className="flex flex-col justify-around w-full rounded-lg">
-
       <Container col={false} center={false}>
         <a target="blank" className="duration-300 flex-grow text-4xl flex justify-center hover:scale-125" href="https://github.com/JoseBambora"><FaGithub /></a>
         <a target="blank" className="duration-300 flex-grow text-4xl flex justify-center hover:scale-125" href="https://www.instagram.com/josebambora20/"><FaInstagram /></a>
