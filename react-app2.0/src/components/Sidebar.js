@@ -11,7 +11,6 @@ import { FaBars } from "react-icons/fa6";
 import { FaXmark } from "react-icons/fa6";
 import Button from "../ui/Button";
 import Container from "../ui/Container";
-import { FaFilePdf } from "react-icons/fa6";
 
 
 function SideBarIconText({ icon, text }) {

@@ -72,12 +72,12 @@ function Header({ title, label, extra, image }) {
       <section className="flex flex-col">
         <h1 className="text-3xl font-bold flex">
           {title}
-          {image ? <img class="rounded-lg h-10 ml-3" src={image} alt={image} /> : null}
         </h1>
         <label className="text-sm font-semibold">
           {label}
         </label>
       </section>
+      {image ? <img className="rounded-lg h-14 ml-3" src={image} alt={image} /> : null}
       <section className="ml-auto">
         <h1 className="text-lg font-bold">{extra}</h1>
       </section>
@@ -85,7 +85,7 @@ function Header({ title, label, extra, image }) {
   ) : null
 }
 
-export function Card({ children, title, description, label, extra, image }) {
+export function Card({ children, title, label, extra, image }) {
   return (
     <div className="w-full bg-zinc-300 dark:bg-zinc-800 rounded-lg shadow-lg shadow-zinc-400/50 dark:shadow-zinc-900 mb-4 transition ease-in-out hover:scale-101 duration-500 z-0">
       <Container col={true} center={false} padding={true}>
