@@ -6,7 +6,7 @@ function LevelToStart(level) {
   const number = [...Array(level).keys()]
   return (
     <div className="flex space-x-3 items-start">
-      {number.map(_ => <span className='bg-zinc-500 dark:bg-white w-5 h-5 rounded-full'></span>)}
+      {number.map((_, index) => <span key={index} className='bg-zinc-500 dark:bg-white w-5 h-5 rounded-full'></span>)}
     </div>
   )
 }

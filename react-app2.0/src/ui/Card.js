@@ -2,6 +2,7 @@ import Container from "./Container";
 import Link from '../ui/Link';
 import { FaGithub } from 'react-icons/fa6';
 import { LinkNoColor } from '../ui/Link'
+import React from "react";
 
 export function SectionListElement({ children }) {
   return (
@@ -10,15 +11,35 @@ export function SectionListElement({ children }) {
     </li>)
 }
 
-export function SectionList({ wrap, children }) {
-  console.log(wrap)
-  const wrapclass = wrap ? "flex flex-col flex-wrap" : ""
+export function SectionList({ children }) {
   return (
-    <ul className={`mt-3 max-h-full w-full md:ml-7 z-0 ${wrapclass}`}>
+    <ul className={`mt-3 max-h-full w-full md:ml-7 md:space-y-3`}>
       {children}
     </ul>
   )
 }
+
+
+export function SectionListHorizontalElement({ children }) {
+  return (
+    <section className="flex">
+      {children}
+    </section>)
+}
+
+export function SectionListHorizontal({ children }) {
+  const itemsWithBullets = React.Children.toArray(children).flatMap((child, index, array) =>
+    index < array.length - 1
+      ? [child, <span key={index}>•</span>]
+      : [child]
+  );
+  return (
+    <div className={`mt-3 w-full space-x-3 z-0 flex flex-wrap`}>
+      {itemsWithBullets}
+    </div>
+  )
+}
+
 
 export function SectionTitle({ title }) {
   return (<span className='font-semibold text-lg'>{title}</span>)
