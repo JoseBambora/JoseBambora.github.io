@@ -27,7 +27,7 @@ function Career() {
             <Section>
               <SectionTitle title={"Information"} />
               <SectionList>
-                <SectionListElement>Java / Java Servlet /Spring Boot</SectionListElement>
+                <SectionListElement>Java / Java Servlet / Spring Boot</SectionListElement>
                 <SectionListElement>Web Development</SectionListElement>
                 <SectionListElement>
                   <LinkProject href={"https://github.com/JoseBambora/ProjetoITSector"} text={"Academy Project"} />

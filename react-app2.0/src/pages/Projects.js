@@ -1,5 +1,5 @@
 import Container from '../ui/Container';
-import { Card, Sections, SectionListHorizontalElement, Section, SectionTitle, SectionListHorizontal, CardDescription } from '../ui/Card';
+import { Card, Sections, SectionListHorizontalElement, Section, SectionListHorizontal, CardDescription } from '../ui/Card';
 import Link from '../ui/Link';
 
 
@@ -10,7 +10,6 @@ function Project({ title, label, image, link, techs, children }) {
         {children}
         <Sections>
           <Section>
-            <SectionTitle title={"Technologies"} />
             <SectionListHorizontal >
               {techs.map((t, index) => <SectionListHorizontalElement key={index * 2}>{t}</SectionListHorizontalElement>)}
             </SectionListHorizontal>
@@ -22,12 +21,9 @@ function Project({ title, label, image, link, techs, children }) {
 }
 
 function Projects() {
-  // Personal: https://github.com/JoseBambora/JoseBambora.github.io
-  // RoadSignsAI: https://github.com/JoseBambora/PersonalProjects/tree/main/RoadSignsAI
-
   return (
     <Container col={true} center={false}>
-      <Project title={"Discord Bot"} label={"Personal Project"} image={"bot.jpg"} link={"https://github.com/JoseBambora/BotDiscord"} techs={["Java", "SQLite", "Maven", "Python", "JDA", "JUnit"]}>
+      <Project title={"Discord Bot"} label={"Personal Project"} image={"bot.jpg"} link={"https://github.com/JoseBambora/BotDiscord"} techs={["Java", "SQLite", "Maven", "Python", "JDA", "JUnit", "Discord API"]}>
         <CardDescription>
           <p>
             This project was created for a Discord community/server called "Os Gverreiros" with more than 3000 members.
@@ -38,7 +34,46 @@ function Projects() {
           </p>
         </CardDescription>
       </Project>
-      <Project title={"Personal Website"} label={"Personal Project"} image={"logo192.png"} link={"https://github.com/JoseBambora/JoseBambora.github.io"} techs={["React", "Tailwind"]}>
+      <Project title={"Sentimental Analysis"} label={"University Project"} image={"llm.png"} link={"https://github.com/AbhimanyuAryan/llm-finetuning"} techs={["Python", "PyTorch", "Transformers"]}>
+        <CardDescription>
+          <p>
+            In this project, along with two colleagues, we compared the performance of three different LLM models for Sentiment Analysis (DistilBert, Mistral, Gemma).
+            The main goal was to use a public dataset for Sentiment Analysis, train various LLM models, and compare them across multiple factors such as final accuracy, training time, and model size.
+            I was responsible for tuning Mistral.
+            If you want to use my model, it is available on my <Link href={"https://huggingface.co/JoseBambora/mistral_retrained"}>HuggingFace profile</Link>.
+          </p>
+        </CardDescription>
+      </Project>
+      <Project title={"Ruby on Rails"} label={"University Project"} image={"rubyrails.jpg"} link={"https://github.com/regedor/pi-ww"} techs={["Ruby on Rails", "PostgreSQL", "Heroku", "Circle CI", "Slack"]}>
+        <CardDescription>
+          <p>
+            Subject <i>"Projeto de Informática"</i> project (final master dregree project), my group decided to do a proposed project from <Link href={"https://www.wellbeing-warrior.com/welcome"}>Wellbeing Warrior</Link>.
+            In this project we had to build an internal web app for Customer Relationship Management (CRM) and a Marketing Campaign Management (MCM).
+          </p>
+          <p>
+            Unfortunately, we only had 2 months for the project, so we were not able to implement as many feature as we would like to, specially in relation with the CRM, such as integration with ChatGPT API, email trackers, etc.
+            Despite that, we surpassed our expectations by building a really good Ruby on Rails system, with tests, automatic heroku deployment, slack notifications and MCM almost completed with a base version for the CRM.
+          </p>
+        </CardDescription>
+      </Project>
+      <Project title={"Road Signs AI"} label={"Personal Project"} image={"roadsignsai.png"} link={"https://github.com/JoseBambora/PersonalProjects/tree/main/RoadSignsAI"} techs={["Python", "PyTorch", "Pandas", "Numpy", "CNN"]}>
+        <CardDescription>
+          <p>
+            The primary goal of this project is to fine tuned pre trained AI models to identify road signals in images and evaluate those different models.
+            The pre trained used models were Resnet, EfficientNet and Mobile Net from PyTorch library.
+          </p>
+        </CardDescription>
+      </Project>
+      <Project title={"BraGuia"} label={"University Project"} image={"BraGuia.png"} link={"https://github.com/JoseBambora/Projeto-TDS"} techs={["Java", "JavaScript", "React Native", "Android Native", "SQLite", "Realm"]}>
+        <CardDescription>
+          <p>
+            In this project, my group created an app featuring trails around the city of Braga.
+            We developed the app twice: once using Android Native and once using React Native.
+            The project aimed to gain experience in mobile development and to compare native development with cross-platform development.
+          </p>
+        </CardDescription>
+      </Project>
+      <Project title={"Personal Website"} label={"Personal Project"} image={"react.png"} link={"https://github.com/JoseBambora/JoseBambora.github.io"} techs={["React", "Tailwind"]}>
         <CardDescription>
           <p>
             My personal website that you are consulting. It was made in react and I decided to do it as something auxiliar to my CV, since I have more space.
@@ -55,27 +90,7 @@ function Projects() {
           </p>
         </CardDescription>
       </Project>
-      <Project title={"Large Language Model"} label={"University Project"} link={"https://github.com/AbhimanyuAryan/llm-finetuning"} techs={["Python", "PyTorch", "Transformers"]}>
-        <CardDescription>
-          <p>
-            In this project, along with two colleagues, we compared the performance of three different LLM models for Sentiment Analysis (DistilBert, Mistral, Gemma).
-            The main goal was to use a public dataset for Sentiment Analysis, train various LLM models, and compare them across multiple factors such as final accuracy, training time, and model size.
-            I was responsible for tuning Mistral.
-            If you want to use my model, it is available on my <Link href={"https://huggingface.co/JoseBambora/mistral_retrained"}>HuggingFace profile</Link>.
-          </p>
-        </CardDescription>
-      </Project>
-      <Project title={"BraGuia"} label={"University Project"} image={"BraGuia.png"} link={"https://github.com/JoseBambora/Projeto-TDS"} techs={["Java", "JavaScript", "React Native", "Android Native", "SQLite", "Realm"]}>
-        <CardDescription>
-          <p>
-            In this project, my group created an app featuring trails around the city of Braga.
-            We developed the app twice: once using Android Native and once using React Native.
-            The project aimed to gain experience in mobile development and to compare native development with cross-platform development.
-          </p>
-        </CardDescription>
-      </Project>
-
-      <Project title={"Ruas Braga"} label={"University Project"} link={"https://github.com/JoseBambora/ProjetoEW"} techs={["JavaScript", "HTML", "CSS", "JQuery", "PUG", "MongoDB"]}>
+      <Project title={"Braga Streets"} label={"University Project"} image={"nodejs.png"} link={"https://github.com/JoseBambora/ProjetoEW"} techs={["JavaScript", "HTML", "CSS", "JQuery", "PUG", "MongoDB"]}>
         <CardDescription>
           <p>
             This website was developed with two colleagues.

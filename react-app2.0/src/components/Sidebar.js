@@ -11,6 +11,8 @@ import { FaBars } from "react-icons/fa6";
 import { FaXmark } from "react-icons/fa6";
 import Button from "../ui/Button";
 import Container from "../ui/Container";
+import { FaEnvelope, FaFilePdf } from "react-icons/fa6";
+import { LinkNoColor } from "../ui/Link";
 
 
 function SideBarIconText({ icon, text }) {
@@ -19,6 +21,26 @@ function SideBarIconText({ icon, text }) {
       <div className="w-2/5 text-2xl flex justify-center z-10">{icon}</div>
       <div className="w-3/5 z-10 text-left">{text}</div>
     </>
+  )
+}
+
+function SideBarElementHeader({ children }) {
+  return (
+    <div className="flex text-2xl justify-center space-x-3 mb-4">
+      <h1 className="font-bold">
+        {children}
+      </h1>
+      <span>&copy;</span>
+      <div className="group text-lg flex flex-col items-end">
+        <Button fullrounded={true} padding={false}>
+          {<FaFilePdf />}
+        </Button>
+        <div className="hidden absolute w-3/5 bg-zinc-100 dark:bg-zinc-700 p-4 rounded-lg z-30 group-hover:flex flex-col mt-8">
+          <LinkNoColor href={"cvs/JoséCarvalho_PT.pdf"}><FaFilePdf /> <span>Portuguese</span></LinkNoColor>
+          <LinkNoColor href={"cvs/JoséCarvalho_EN.pdf"}><FaFilePdf /> <span>English</span></LinkNoColor>
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -53,6 +75,7 @@ function SideBarSocial() {
         <a target="blank" className="duration-300 flex-grow text-4xl flex justify-center hover:scale-125" href="https://github.com/JoseBambora"><FaGithub /></a>
         <a target="blank" className="duration-300 flex-grow text-4xl flex justify-center hover:scale-125" href="https://www.instagram.com/josebambora20/"><FaInstagram /></a>
         <a target="blank" className="duration-300 flex-grow text-4xl flex justify-center hover:scale-125" href="https://www.linkedin.com/in/jose-m-carvalho"><FaLinkedin /></a>
+        <a target="blank" className="duration-300 flex-grow text-4xl flex justify-center hover:scale-125" href="mailto:josecarvalho.ei@gmail.com"><FaEnvelope /></a>
       </Container>
     </div>
   )
@@ -82,9 +105,10 @@ function SideBarElements({ setPage, setHidden, page }) {
         <div className="absolute top-6 right-0 md:hidden z-50">
           <Button onClick={setHidden} fullrounded={true} padding={true}><FaXmark /></Button>
         </div>
-        <div className={"w-full h-full items-stretch bg-zinc-300 dark:bg-zinc-800 rounded-lg shadow-lg shadow-zinc-400/50 dark:shadow-zinc-900 z-40"}>
+        <div className={"w-full h-full items-stretch bg-zinc-300 dark:bg-zinc-800 rounded-lg shadow-lg shadow-zinc-400/50 dark:shadow-zinc-900 z-40 overflow-y-auto"}>
           <Container col={true} center={false}>
             <SideBarTop>
+              <SideBarElementHeader>José Carvalho</SideBarElementHeader>
               <SideBarElement selected={page === 0} onClick={() => { setPage(0); setHidden(true) }} text="About Me" icon={<FaUser />} />
               <SideBarElement selected={page === 1} onClick={() => { setPage(1); setHidden(true) }} text="Career" icon={<FaBriefcase />} />
               <SideBarElement selected={page === 2} onClick={() => { setPage(2); setHidden(true) }} text="Education" icon={<FaGraduationCap />} />
@@ -93,9 +117,6 @@ function SideBarElements({ setPage, setHidden, page }) {
             </SideBarTop>
             <SideBarBottom>
               <SideBarLightDark />
-              <Container col={false} center={true}>
-                <span className="text-lg">&copy; José Carvalho</span>
-              </Container>
               <SideBarSocial />
             </SideBarBottom>
           </Container>
@@ -121,6 +142,8 @@ function SideBar({ setPage, page }) {
       if (window.innerWidth >= 768) {
         setHidden(false)
       }
+      else
+        setHidden(true)
     }
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)

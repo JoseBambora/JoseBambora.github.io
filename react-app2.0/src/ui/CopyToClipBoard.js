@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Button from '../ui/Button'
 import { FaRegCopy, FaCheck } from "react-icons/fa6";
 
-function CopyToClipBoard({ text }) {
+function CopyToClipBoard({ text, icon, big }) {
   const [copied, setCopied] = useState(false)
   useEffect(() => {
     if (copied) {
@@ -13,10 +13,10 @@ function CopyToClipBoard({ text }) {
     }
   }, [copied]);
   return (
-    <div className="w-8 h-8 top-0">
+    <div className={big ? "" : "w-8 h-8 top-0"}>
       <Button onClick={() => { navigator.clipboard.writeText(text); setCopied(true) }} fullrounded={true} padding={false}>
-        <div className="text-xs">
-          {copied ? <FaCheck /> : <FaRegCopy />}
+        <div className={big ? "" : "text-xs"}>
+          {copied ? <FaCheck /> : icon ? (icon) : <FaRegCopy />}
         </div>
       </Button>
     </div>

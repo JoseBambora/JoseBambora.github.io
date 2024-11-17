@@ -1,6 +1,6 @@
 
 import Container from '../ui/Container';
-import { Card, CardSideBySide, Section, SectionList, SectionListElement } from '../ui/Card';
+import { Card, CardSideBySide, Section, SectionList, SectionListElement, SectionListHorizontal, SectionListHorizontalElement } from '../ui/Card';
 import Link from '../ui/Link';
 import { FaEnvelope, FaPhone } from "react-icons/fa6";
 import { FaFilePdf } from "react-icons/fa6";
@@ -28,16 +28,37 @@ function AboutMeImportantInfo() {
           <AboutMeIconText icon={<FaEnvelope />} text={"josecarvalho.ei@gmail.com"} copyToClipboard={true} />
         </SectionListElement>
         <SectionListElement>
-          <AboutMeIconText icon={<FaPhone />} text={"+351 969598852"} copyToClipboard={true} />
+          <AboutMeIconText icon={<FaPhone />} text={"(+351) 969 598 852"} copyToClipboard={true} />
         </SectionListElement>
-        <SectionListElement>
-          <Link href={"cvs/JoséCarvalho_PT.pdf"}>
-            <AboutMeIconText icon={<FaFilePdf />} text={"Portuguese CV"} />
-          </Link>
-          <Link href={"cvs/JoséCarvalho_EN.pdf"}>
-            <AboutMeIconText icon={<FaFilePdf />} text={"English CV"} />
-          </Link>
-        </SectionListElement>
+
+        <div className='hidden md:block'>
+          <SectionListHorizontal>
+            <SectionListHorizontalElement>
+              <Link href={"cvs/JoséCarvalho_PT.pdf"}>
+                <AboutMeIconText icon={<FaFilePdf />} text={"Portuguese"} />
+              </Link>
+            </SectionListHorizontalElement>
+            <SectionListHorizontalElement>
+              <Link href={"cvs/JoséCarvalho_EN.pdf"}>
+                <AboutMeIconText icon={<FaFilePdf />} text={"English"} />
+              </Link>
+            </SectionListHorizontalElement>
+          </SectionListHorizontal>
+        </div>
+        <div className='md:hidden'>
+          <SectionList>
+            <SectionListElement>
+              <Link href={"cvs/JoséCarvalho_PT.pdf"}>
+                <AboutMeIconText icon={<FaFilePdf />} text={"Portuguese CV"} />
+              </Link>
+            </SectionListElement>
+            <SectionListElement>
+              <Link href={"cvs/JoséCarvalho_EN.pdf"}>
+                <AboutMeIconText icon={<FaFilePdf />} text={"English CV"} />
+              </Link>
+            </SectionListElement>
+          </SectionList>
+        </div>
       </SectionList>
     </Section>
   )
@@ -46,12 +67,28 @@ function AboutMeImportantInfo() {
 function AboutMePicture() {
   return (
     <Container col={false} center={false}>
-      <img src="Zé.jpg" alt="My face" className='aspect-square w-1/4 mr-3 rounded-lg' />
-      <div className='flex flex-col space-y-3'>
-        <h1 className='text-3xl font-bold'>José Carvalho</h1>
-        <AboutMeIconText icon={<FaLocationDot />} text={"Braga, Portugal"} />
-      </div>
-    </Container>
+      <img src="Zé.jpg" alt="My face" className='aspect-square w-1/3 md:w-1/4 object-contain mr-3 rounded-lg' />
+      <Container col={false} center={false}>
+        <div className='flex flex-col space-y-3'>
+          <h1 className='text-3xl font-bold'>José Carvalho</h1>
+          <AboutMeIconText icon={<FaLocationDot />} text={"Braga, Portugal"} />
+          <Section>
+            <div className='hidden md:block'>
+              <SectionListHorizontal>
+                <SectionListHorizontalElement>Software Engineering</SectionListHorizontalElement>
+                <SectionListHorizontalElement>Programmer</SectionListHorizontalElement>
+              </SectionListHorizontal>
+            </div>
+            <div className='md:hidden'>
+              <SectionList>
+                <SectionListElement>Software Engineering</SectionListElement>
+                <SectionListElement>Programmer</SectionListElement>
+              </SectionList>
+            </div>
+          </Section>
+        </div>
+      </Container>
+    </Container >
   )
 }
 

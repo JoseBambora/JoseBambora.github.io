@@ -7,7 +7,7 @@ function Link({ href, children }) {
 
 export function LinkNoColor({ href, children }) {
   return (
-    <a className="underline decoration-1 hover:text-orange-500" href={href} target="blank">
+    <a className="underline decoration-1 hover:text-orange-500 flex space-x-3" href={href} target="blank">
       {children}
     </a>)
 }

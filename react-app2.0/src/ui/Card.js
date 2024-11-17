@@ -6,14 +6,14 @@ import React from "react";
 
 export function SectionListElement({ children }) {
   return (
-    <li className="flex h-1/3">
+    <li className="flex h-1/3 space-x-3">
       {children}
     </li>)
 }
 
 export function SectionList({ children }) {
   return (
-    <ul className={`mt-3 max-h-full w-full md:ml-7 md:space-y-3`}>
+    <ul className={`mt-3 max-h-full w-full md:ml-7 space-y-2`}>
       {children}
     </ul>
   )
@@ -56,7 +56,7 @@ export function Section({ children }) {
 export function Sections({ children, col }) {
   const typeflex = col ? "md:flex-col md:space-y-3" : "md:flex-row md:space-x-3"
   return (
-    <section className={`w-full flex flex-col ${typeflex} `}>
+    <section className={`w-full flex flex-col space-y-3 ${typeflex} `}>
       {children}
     </section>
   )
@@ -115,7 +115,7 @@ function Header({ title, label, extra, image, link }) {
       <section className="ml-auto flex">
         <h1 className="text-lg font-bold">{extra}</h1>
       </section>
-      {image ? <img className="absolute rounded-full h-20 right-0" src={image} alt={image} /> : null}
+      {image ? <img className="absolute rounded-full hidden h-20 w-20 object-contain  md:block right-0" src={image} alt={image} /> : null}
     </section>
   ) : null
 }
