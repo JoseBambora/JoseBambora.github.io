@@ -56,7 +56,7 @@ export function Section({ children }) {
 export function Sections({ children, col }) {
   const typeflex = col ? "md:flex-col md:space-y-3" : "md:flex-row md:space-x-3"
   return (
-    <section className={`w-full flex flex-col space-y-3 ${typeflex} `}>
+    <section className={`w-full flex flex-col ${typeflex}`}>
       {children}
     </section>
   )

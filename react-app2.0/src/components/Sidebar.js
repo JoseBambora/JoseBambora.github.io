@@ -30,14 +30,15 @@ function SideBarElementHeader({ children }) {
       <h1 className="font-bold">
         {children}
       </h1>
-      <span>&copy;</span>
-      <div className="group text-lg flex flex-col items-end">
+      <div className="group text-lg flex flex-col">
         <Button fullrounded={true} padding={false}>
           {<FaFilePdf />}
         </Button>
-        <div className="hidden absolute w-3/5 bg-zinc-100 dark:bg-zinc-700 p-4 rounded-lg z-30 group-hover:flex flex-col mt-8">
-          <LinkNoColor href={"cvs/JoséCarvalho_PT.pdf"}><FaFilePdf /> <span>Portuguese</span></LinkNoColor>
-          <LinkNoColor href={"cvs/JoséCarvalho_EN.pdf"}><FaFilePdf /> <span>English</span></LinkNoColor>
+        <div className=" items-end mt-2">
+          <div className="hidden absolute w-3/5 bg-zinc-100 dark:bg-zinc-700 p-4 rounded-lg z-30 group-hover:flex flex-col shadow-lg shadow-zinc-400/50  dark:shadow-zinc-900">
+            <LinkNoColor href={"cvs/JoséCarvalho_PT.pdf"}><FaFilePdf /> <span>CV Português</span></LinkNoColor>
+            <LinkNoColor href={"cvs/JoséCarvalho_EN.pdf"}><FaFilePdf /> <span>CV English</span></LinkNoColor>
+          </div>
         </div>
       </div>
     </div>
@@ -53,8 +54,7 @@ function SideBarElement({ text, icon, onClick, selected }) {
   )
 }
 
-function SideBarLightDark() {
-  const [darkMode, setDarkMode] = useState(false);
+function SideBarLightDark({darkMode, setDarkMode}) {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
     document.documentElement.classList.toggle('dark', !darkMode);
@@ -98,7 +98,7 @@ function SideBarBottom({ children }) {
 }
 
 
-function SideBarElements({ setPage, setHidden, page }) {
+function SideBarElements({ setPage, setHidden, page, darkMode, setDarkMode }) {
   return (
     <div className="fixed w-full md:w-1/5 h-screen md:bg-opacity-0 dark:md:bg-opacity-0 bg-zinc-500 dark:bg-zinc-500 bg-opacity-50 dark:bg-opacity-50 z-20">
       <Container col={false} center={false}>
@@ -116,7 +116,7 @@ function SideBarElements({ setPage, setHidden, page }) {
               <SideBarElement selected={page === 4} onClick={() => { setPage(4); setHidden(true) }} text="Projects" icon={<FaComputer />} />
             </SideBarTop>
             <SideBarBottom>
-              <SideBarLightDark />
+              <SideBarLightDark darkMode={darkMode} setDarkMode={setDarkMode}/>
               <SideBarSocial />
             </SideBarBottom>
           </Container>
@@ -136,6 +136,7 @@ function BurgerButton({ changeHidden }) {
 
 function SideBar({ setPage, page }) {
   const [hidden, setHidden] = useState(window.innerWidth >= 768 ? false : true)
+  const [darkMode, setDarkMode] = useState(false);
   const changeHidden = () => window.innerWidth >= 768 ? false : setHidden(!hidden)
   useEffect(() => {
     const handleResize = () => {
@@ -151,7 +152,7 @@ function SideBar({ setPage, page }) {
   return (
     <aside className="w-full md:w-1/5">
       {hidden ? <BurgerButton changeHidden={changeHidden} /> : null}
-      {hidden ? null : <SideBarElements setPage={setPage} setHidden={changeHidden} page={page} />}
+      {hidden ? null : <SideBarElements setPage={setPage} setHidden={changeHidden} page={page} darkMode={darkMode} setDarkMode={setDarkMode} />}
     </aside >
   )
 }

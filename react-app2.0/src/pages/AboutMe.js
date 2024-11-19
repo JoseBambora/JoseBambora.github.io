@@ -10,11 +10,15 @@ import CopyToClipBoard from '../ui/CopyToClipBoard';
 
 function AboutMeIconText({ icon, text, copyToClipboard }) {
   return (
-    <div className="flex text-lg space-x-3 items-center">
+    <div className="flex text-lg space-x-3 items-center group">
       <div className='text-xl text-zinc-700 dark:text-white'>{icon}</div>
       <p>{text}</p>
       {copyToClipboard ?
-        <CopyToClipBoard text={text} />
+        (
+        <div className="invisible group-hover:visible">
+          <CopyToClipBoard text={text} />
+        </div>
+        )
         : null}
     </div>
   )
@@ -35,12 +39,12 @@ function AboutMeImportantInfo() {
           <SectionListHorizontal>
             <SectionListHorizontalElement>
               <Link href={"cvs/JoséCarvalho_PT.pdf"}>
-                <AboutMeIconText icon={<FaFilePdf />} text={"Portuguese"} />
+                <AboutMeIconText icon={<FaFilePdf />} text={"CV Português"} />
               </Link>
             </SectionListHorizontalElement>
             <SectionListHorizontalElement>
               <Link href={"cvs/JoséCarvalho_EN.pdf"}>
-                <AboutMeIconText icon={<FaFilePdf />} text={"English"} />
+                <AboutMeIconText icon={<FaFilePdf />} text={"CV English"} />
               </Link>
             </SectionListHorizontalElement>
           </SectionListHorizontal>
@@ -49,12 +53,12 @@ function AboutMeImportantInfo() {
           <SectionList>
             <SectionListElement>
               <Link href={"cvs/JoséCarvalho_PT.pdf"}>
-                <AboutMeIconText icon={<FaFilePdf />} text={"Portuguese CV"} />
+                <AboutMeIconText icon={<FaFilePdf />} text={"CV Português"} />
               </Link>
             </SectionListElement>
             <SectionListElement>
               <Link href={"cvs/JoséCarvalho_EN.pdf"}>
-                <AboutMeIconText icon={<FaFilePdf />} text={"English CV"} />
+                <AboutMeIconText icon={<FaFilePdf />} text={"CV English"} />
               </Link>
             </SectionListElement>
           </SectionList>
@@ -67,7 +71,7 @@ function AboutMeImportantInfo() {
 function AboutMePicture() {
   return (
     <Container col={false} center={false}>
-      <img src="Zé.jpg" alt="My face" className='aspect-square w-1/3 md:w-1/4 object-contain mr-3 rounded-lg' />
+      <img src="Zé.jpg" alt="My face" className='aspect-square w-full md:w-1/4 object-contain mr-3 rounded-lg' />
       <Container col={false} center={false}>
         <div className='flex flex-col space-y-3'>
           <h1 className='text-3xl font-bold'>José Carvalho</h1>

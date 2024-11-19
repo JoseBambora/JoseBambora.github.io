@@ -3,10 +3,12 @@ import { Card, CardSideBySide, Section, Sections } from '../ui/Card';
 import { Table } from '../ui/Table';
 
 function LevelToStart(level) {
-  const number = [...Array(level).keys()]
+  const number_stars = [...Array(level).keys()]
+  const number_empty  = [...Array(5-level).keys()]
   return (
-    <div className="flex space-x-3 items-start">
-      {number.map((_, index) => <span key={index} className='bg-zinc-500 dark:bg-white w-5 h-5 rounded-full'></span>)}
+    <div className="flex space-x-3 justify-center w-full">
+      {number_stars.map((_, index) => <span key={index} className='bg-zinc-500 dark:bg-white w-5 h-5 rounded-full group-hover:bg-white'></span>)}
+      {number_empty.map((_, index) => <span key={index} className='w-5 h-5 invisible'></span>)}
     </div>
   )
 }
@@ -25,6 +27,7 @@ function Skills() {
     { name: 'PostgreSQL', level: 4 },
   ])
   const extra = DictToArray([
+    { name: 'Linux', level: 5 },
     { name: 'Machine Learning', level: 4 },
     { name: 'UML', level: 4 },
     { name: 'Web Development', level: 4 },
