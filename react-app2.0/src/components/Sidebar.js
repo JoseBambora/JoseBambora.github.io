@@ -25,22 +25,29 @@ function SideBarIconText({ icon, text }) {
 }
 
 function SideBarElementHeader({ children }) {
+  const [isOpen, setOpen] = useState(false)
   return (
-    <div className="flex text-2xl justify-center space-x-3 mb-4">
-      <h1 className="font-bold">
-        {children}
-      </h1>
-      <div className="group text-lg flex flex-col">
-        <Button fullrounded={true} padding={false} title={"My CVS"}>
-          {<FaFilePdf />}
-        </Button>
-        <div className="items-end mt-2">
-          <div className="hidden absolute w-3/5 bg-zinc-100 dark:bg-zinc-700 p-4 rounded-lg z-30 group-hover:flex flex-col shadow-lg shadow-zinc-400/50  dark:shadow-zinc-900">
-            <LinkNoColor href={"cvs/JoséCarvalho_PT.pdf"}><FaFilePdf /> <span>CV Português</span></LinkNoColor>
-            <LinkNoColor href={"cvs/JoséCarvalho_EN.pdf"}><FaFilePdf /> <span>CV English</span></LinkNoColor>
-          </div>
+    <div className="flex flex-col justify-center">
+      <div className="flex text-2xl justify-center space-x-3 mb-4">
+        <h1 className="font-bold">
+          {children}
+        </h1>
+        <div className="text-lg flex flex-col">
+          <Button fullrounded={true} padding={false} title={"My CVS"} onClick={() => setOpen(!isOpen)}>
+            {<FaFilePdf />}
+          </Button>
         </div>
       </div>
+      {
+        isOpen ? (
+          <div className="relative">
+            <div className="bg-zinc-100 dark:bg-zinc-700 p-4 rounded-lg z-30 flex flex-col shadow-lg shadow-zinc-400/50  dark:shadow-zinc-900">
+              <LinkNoColor href={"cvs/JoséCarvalho_PT.pdf"}><FaFilePdf /> <span>CV Português</span></LinkNoColor>
+              <LinkNoColor href={"cvs/JoséCarvalho_EN.pdf"}><FaFilePdf /> <span>CV English</span></LinkNoColor>
+            </div>
+          </div>
+        ) : null
+      }
     </div>
   )
 }
@@ -105,6 +112,11 @@ function SideBarBottom({ children }) {
 
 
 function SideBarElements({ setPage, setHidden, page, darkMode, setDarkMode }) {
+  const funAux = (page) => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+    setPage(page)
+    setHidden(true)
+  }
   return (
     <div className="fixed w-full md:w-1/5 h-screen md:bg-opacity-0 dark:md:bg-opacity-0 bg-zinc-500 dark:bg-zinc-500 bg-opacity-50 dark:bg-opacity-50 z-20">
       <Container col={false} center={false}>
@@ -115,11 +127,11 @@ function SideBarElements({ setPage, setHidden, page, darkMode, setDarkMode }) {
           <Container col={true} center={false}>
             <SideBarTop>
               <SideBarElementHeader>José Carvalho</SideBarElementHeader>
-              <SideBarElement selected={page === 0} onClick={() => { setPage(0); setHidden(true) }} text="About Me" icon={<FaUser />} />
-              <SideBarElement selected={page === 1} onClick={() => { setPage(1); setHidden(true) }} text="Career" icon={<FaBriefcase />} />
-              <SideBarElement selected={page === 2} onClick={() => { setPage(2); setHidden(true) }} text="Education" icon={<FaGraduationCap />} />
-              <SideBarElement selected={page === 3} onClick={() => { setPage(3); setHidden(true) }} text="Skills" icon={<FaListUl />} />
-              <SideBarElement selected={page === 4} onClick={() => { setPage(4); setHidden(true) }} text="Projects" icon={<FaComputer />} />
+              <SideBarElement selected={page === 0} onClick={() => funAux(0)} text="About Me" icon={<FaUser />} />
+              <SideBarElement selected={page === 1} onClick={() => funAux(1)} text="Career" icon={<FaBriefcase />} />
+              <SideBarElement selected={page === 2} onClick={() => funAux(2)} text="Education" icon={<FaGraduationCap />} />
+              <SideBarElement selected={page === 3} onClick={() => funAux(3)} text="Skills" icon={<FaListUl />} />
+              <SideBarElement selected={page === 4} onClick={() => funAux(4)} text="Projects" icon={<FaComputer />} />
             </SideBarTop>
             <SideBarBottom>
               <SideBarLightDark darkMode={darkMode} setDarkMode={setDarkMode} />
