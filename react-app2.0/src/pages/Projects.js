@@ -23,7 +23,7 @@ function Project({ title, label, image, link, techs, children }) {
 function Projects() {
   return (
     <Container col={true} center={false}>
-      <Project title={"Discord Bot"} label={"Personal Project"} image={"bot.jpg"} link={"https://github.com/JoseBambora/BotDiscord"} techs={["Java", "SQLite", "Maven", "Python", "JDA", "JUnit", "Discord API"]}>
+      <Project title={"Discord Bot"} label={"Personal Project"} image={"bot.jpg"} link={"https://github.com/JoseBambora/BotDiscord"} techs={["Java", "SQLite", "Maven", "Python", "JDA", "JUnit", "Discord API", "Github Actions"]}>
         <CardDescription>
           <p>
             This project was created for a Discord community/server called "Os Gverreiros" with more than 3000 members.
@@ -48,7 +48,7 @@ function Projects() {
         <CardDescription>
           <p>
             Subject <i>"Projeto de Informática"</i> project (final master dregree project), my group decided to do a proposed project from <Link href={"https://www.wellbeing-warrior.com/welcome"}>Wellbeing Warrior</Link>.
-            In this project we had to build an internal web app for Customer Relationship Management (CRM) and a Marketing Campaign Management (MCM).
+            In this project we had to build an internal web app for Customer Relationship Manager (CRM) and a Marketing Campaign Manager (MCM).
           </p>
           <p>
             Unfortunately, we only had 2 months for the project, so we were not able to implement as many feature as we would like to, specially in relation with the CRM, such as integration with ChatGPT API, email trackers, etc.

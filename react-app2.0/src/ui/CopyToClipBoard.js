@@ -14,7 +14,7 @@ function CopyToClipBoard({ text, icon, big }) {
   }, [copied]);
   return (
     <div className={big ? "" : "w-8 h-8 top-0"}>
-      <Button onClick={() => { navigator.clipboard.writeText(text); setCopied(true) }} fullrounded={true} padding={false}>
+      <Button onClick={() => { navigator.clipboard.writeText(text); setCopied(true) }} fullrounded={true} padding={false} title={"Copy"}>
         <div className={big ? "" : "text-xs"}>
           {copied ? <FaCheck /> : icon ? (icon) : <FaRegCopy />}
         </div>

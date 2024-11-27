@@ -31,10 +31,10 @@ function SideBarElementHeader({ children }) {
         {children}
       </h1>
       <div className="group text-lg flex flex-col">
-        <Button fullrounded={true} padding={false}>
+        <Button fullrounded={true} padding={false} title={"My CVS"}>
           {<FaFilePdf />}
         </Button>
-        <div className=" items-end mt-2">
+        <div className="items-end mt-2">
           <div className="hidden absolute w-3/5 bg-zinc-100 dark:bg-zinc-700 p-4 rounded-lg z-30 group-hover:flex flex-col shadow-lg shadow-zinc-400/50  dark:shadow-zinc-900">
             <LinkNoColor href={"cvs/JoséCarvalho_PT.pdf"}><FaFilePdf /> <span>CV Português</span></LinkNoColor>
             <LinkNoColor href={"cvs/JoséCarvalho_EN.pdf"}><FaFilePdf /> <span>CV English</span></LinkNoColor>
@@ -54,29 +54,35 @@ function SideBarElement({ text, icon, onClick, selected }) {
   )
 }
 
-function SideBarLightDark({darkMode, setDarkMode}) {
+function SideBarLightDark({ darkMode, setDarkMode }) {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
     document.documentElement.classList.toggle('dark', !darkMode);
   };
   return (
     <Container col={false} center={true}>
-      <Button onClick={toggleDarkMode} fullrounded={true} padding={true}>
+      <Button onClick={toggleDarkMode} fullrounded={true} padding={true} title={darkMode ? "Light Mode" : "Dark Mode"}>
         {darkMode ? (<FaMoon />) : (<FaSun />)}
       </Button>
     </Container>
   )
 }
 
+function SideBarIconsBottom({ href, icon, message }) {
+  return (
+    <a target="blank" className="flex-grow duration-300 hover:scale-125 text-4xl flex justify-center" href={href} title={message}>
+      {icon}
+    </a>
+  )
+}
+
 function SideBarSocial() {
   return (
-    <div className="flex flex-col justify-around w-full rounded-lg">
-      <Container col={false} center={false}>
-        <a target="blank" className="duration-300 flex-grow text-4xl flex justify-center hover:scale-125" href="https://github.com/JoseBambora"><FaGithub /></a>
-        <a target="blank" className="duration-300 flex-grow text-4xl flex justify-center hover:scale-125" href="https://www.instagram.com/josebambora20/"><FaInstagram /></a>
-        <a target="blank" className="duration-300 flex-grow text-4xl flex justify-center hover:scale-125" href="https://www.linkedin.com/in/jose-m-carvalho"><FaLinkedin /></a>
-        <a target="blank" className="duration-300 flex-grow text-4xl flex justify-center hover:scale-125" href="mailto:josecarvalho.ei@gmail.com"><FaEnvelope /></a>
-      </Container>
+    <div className="flex flex-row justify-around w-full p-4 flex-wrap">
+      <SideBarIconsBottom href={"https://github.com/JoseBambora"} icon={<FaGithub />} message={"My GitHub"} />
+      <SideBarIconsBottom href={"https://www.instagram.com/josebambora20/"} icon={<FaInstagram />} message={"My Instagram"} />
+      <SideBarIconsBottom href={"https://www.linkedin.com/in/jose-m-carvalho"} icon={<FaLinkedin />} message={"My Linkedin"} />
+      <SideBarIconsBottom href={"mailto:josecarvalho.ei@gmail.com"} icon={<FaEnvelope />} message={"Send me an email"} />
     </div>
   )
 }
@@ -116,7 +122,7 @@ function SideBarElements({ setPage, setHidden, page, darkMode, setDarkMode }) {
               <SideBarElement selected={page === 4} onClick={() => { setPage(4); setHidden(true) }} text="Projects" icon={<FaComputer />} />
             </SideBarTop>
             <SideBarBottom>
-              <SideBarLightDark darkMode={darkMode} setDarkMode={setDarkMode}/>
+              <SideBarLightDark darkMode={darkMode} setDarkMode={setDarkMode} />
               <SideBarSocial />
             </SideBarBottom>
           </Container>
